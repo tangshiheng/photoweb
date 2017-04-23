@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		//获取登录按钮对象
+		var subEle = document.getElementById("sub");
+		//给登录按钮绑定单击事件
+		subEle.onclick = function(){
+			var userValue = document.getElementById("userInput").value;
+			if(userValue == ""){
+				alert("用户名不能为空！");
+				//取消默认行为
+				return false;
+			}
+			var passwordValue = document.getElementById("passwordInput").value;
+			if(passwordValue == ""){
+				alert("密码不能为空！");
+				//取消默认行为
+				return false;
+			}
+		};
+	};
+</script>
+<base href="http://localhost:8080/photoweb/">
+</head>
+<body>
+	<h3>登录页面</h3>
+	<img alt="这是尚硅谷的Logo" src="img/logo.gif">
+	<form action="userServlet?action=login" method="post">
+		<table  border="1" >
+			<tr>
+				<td>用户名</td>
+				<td>
+					<input type="text" name="username" id="userInput">
+				</td>
+			</tr>
+			<tr>
+				<td align="center">密码</td>
+				<td>
+					<input type="password" name="password" id="passwordInput">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input id="sub" type="submit" value="登录">
+					<a href="user/regist.html">注册</a>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<br><br>
+	<a href="index.html">回首页</a>
+</body>
+</html>

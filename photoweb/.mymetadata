@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="photoweb"
+  id="myeclipse.1492515344352"
+  context-root="/photoweb"
+  j2ee-spec="5.0"
+  archive="photoweb.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

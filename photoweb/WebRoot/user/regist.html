@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		//获取注册按钮并给它绑定单击事件
+		document.getElementById("submitBtn").onclick = function(){
+			//获取输入用户名的文本框
+			var userInputEle = document.getElementById("userInput");
+			//获取文本框中用户输入的值
+			var userValue = userInputEle.value;
+			//判断用户输入的用户名是否为空
+			if(userValue == ""){
+				alert("用户名不能为空！");
+				//取消提交表单的默认行为
+				return false;
+			}
+			//获取输入密码的密码框
+			var pwdInputEle = document.getElementById("pwdInput");
+			//获取密码框中用户输入的值
+			var pwdValue = pwdInputEle.value;
+			//判断用户输入的密码是否为空
+			if(pwdValue == ""){
+				alert("密码不能为空！");
+				//取消提交表单的默认行为
+				return false;
+			}
+			var confirmPwd = document.getElementById("confirmPwd");
+			var confirmValue = confirmPwd.value;
+			if(confirmValue == ""){
+				alert("确认密码不能为空！");
+				return false;
+			}
+			//判断密码和确认密码是否一致
+			if(pwdValue != confirmValue){
+				//将确认密码置空
+				confirmPwd.value.length = 0;
+				alert("两次输入的密码不一致！");
+				return false;
+			}
+			var emailInputEle = document.getElementById("emailInput");
+			var emailValue = emailInputEle.value;
+			if(emailValue == ""){
+				alert("邮箱不能为空！");
+				return false;
+			}
+		};
+	};
+</script>
+<base href="http://localhost:8080/photoweb/">
+</head>
+<body>
+	<h3>注册页面</h3>
+
+	<img src="img/logo.gif"/>
+	
+	<form action="userServlet?action=regist" method="post">
+		<table border="1">
+			<tr>
+				<td>用户名</td>
+				<td><input  type="text" id="userInput" name="username" /></td>
+			</tr>
+		
+			<tr>
+				<td>密码</td>
+				<td><input  type="password" id="pwdInput" name="password" /></td>
+			</tr>
+		
+			<tr>
+				<td>确认密码</td>
+				<td><input  type="password" id="confirmPwd" name="passwordConfirm" /></td>
+			</tr>
+		
+			<tr>
+				<td>邮箱</td>
+				<td><input  type="text" id="emailInput" name="email" /></td>
+			</tr>
+		
+			<tr>
+				<td colspan="2" align="center"><input  type="submit" id="submitBtn" value="注册" /></td>
+			</tr>
+		
+		</table>
+	
+	</form>
+	
+	<br /><br />
+	
+	<a href="index.html">回首页</a>
+
+</body>
+</html>
